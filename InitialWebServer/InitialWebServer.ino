@@ -1,9 +1,8 @@
 
 /****************************************************************
-WebClient.ino
-CC3000 WebClient Test
-Shawn Hymel @ SparkFun Electronics
-March 1, 2014
+InitialWebServer.ino
+Oleg Schtofenmaher
+September 14, 2015
 https://github.com/sparkfun/SFE_CC3000_Library
 
 Manually connects to a WiFi network and performs an HTTP GET
