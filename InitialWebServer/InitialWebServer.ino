@@ -2,15 +2,10 @@
 /****************************************************************
 InitialWebServer.ino
 Oleg Schtofenmaher
-September 14, 2015
-https://github.com/sparkfun/SFE_CC3000_Library
+September 13, 2015
+https://github.com/olegsch/arduino-web-server
 
-Manually connects to a WiFi network and performs an HTTP GET
-request on a web page. Prints the contents of the page to
-the serial console.
-
-The security mode is defined by one of the following:
-WLAN_SEC_UNSEC, WLAN_SEC_WEP, WLAN_SEC_WPA, WLAN_SEC_WPA2
+Manually connects to a WiFi network and initializes a web server.
 
 Hardware Connections:
  
@@ -29,12 +24,8 @@ Resources:
 Include SPI.h, SFE_CC3000.h, and SFE_CC3000_Client.h
 
 Development environment specifics:
-Written in Arduino 1.0.5
-Tested with Arduino UNO R3
-
-This code is beerware; if you see me (or any other SparkFun 
-employee) at the local, and you've found our code helpful, please
-buy us a round!
+Written in Arduino 1.6.5
+Tested with Sparkfun Red Board (Uno R3) and Sparkfun CC3300 Wifi board.
 
 Distributed as-is; no warranty is given.
 ****************************************************************/
@@ -77,7 +68,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
   Serial.println("---------------------------");
-  Serial.println("SparkFun CC3000 - WebClient");
+  Serial.println("SparkFun CC3000 - WebServer");
   Serial.println("---------------------------");
   
   // Initialize CC3000 (configure SPI communications)
@@ -119,19 +110,19 @@ void setup() {
   }
   
   // Make a TCP connection to remote host
-  Serial.print("Performing HTTP GET of: ");
+  /*Serial.print("Performing HTTP GET of: ");
   Serial.println(server);
   if ( !client.connect(server, 80) ) {
     Serial.println("Error: Could not make a TCP connection");
-  }
+  }*/
   
   // Make a HTTP GET request
-  client.println("GET /index.html HTTP/1.1");
+  /*client.println("GET /index.html HTTP/1.1");
   client.print("Host: ");
   client.println(server);
   client.println("Connection: close");
   client.println();
-  Serial.println();
+  Serial.println();*/
 }
 
 void loop() {
